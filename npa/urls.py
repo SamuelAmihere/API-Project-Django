@@ -5,8 +5,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('markets/', views.market_list, name='markets'),
-    path('markets/<int:id>', views.market_details, name='markets'),
+    path('', include('npa_api.urls')),
 ]
 
-# urlpatterns = format_suffix_patterns(urlpatterns)
+urlpatterns = format_suffix_patterns(urlpatterns) 
